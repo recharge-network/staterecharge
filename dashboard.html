@@ -2,179 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dashboard - StateRecharge</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #e3f2fd;
+      background: #f4f6f9;
       margin: 0;
       padding: 0;
     }
     header {
-      background: #1976d2;
+      background-color: #0072ff;
       color: white;
       padding: 20px;
       text-align: center;
     }
-    nav {
-      background: #eeeeee;
-      padding: 10px;
-      text-align: center;
+    h1 {
+      margin: 0;
     }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #1976d2;
-      font-weight: bold;
-    }
-    main {
-      padding: 30px;
-      text-align: center;
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
     }
     .card {
-      background: white;
-      display: inline-block;
+      background-color: white;
       width: 200px;
-      margin: 15px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    .card:hover {
-      box-shadow: 0 0 12px rgba(0,0,0,0.2);
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Welcome to StateRecharge</h1>
-    <p>Your one-stop Recharge & Bill Payment Panel</p>
-  </header>
-
-  <nav>
-    <a href="recharge.html">Recharge</a>
-    <a href="billpayment.html">Bill Payment</a>
-    <a href="wallet.html">Wallet</a>
-    <a href="logout.html">Logout</a>
-  </nav>
-
-  <main>
-    <div class="card">
-      <h3>Mobile Recharge</h3>
-      <p>Prepaid / Postpaid</p>
-    </div>
-    <div class="card">
-      <h3>Electricity Bill</h3>
-      <p>Pay instantly</p>
-    </div>
-    <div class="card">
-      <h3>DTH Recharge</h3>
-      <p>All operators</p>
-    </div>
-    <div class="card">
-      <h3>FASTag</h3>
-      <p>Recharge your fastag</p>
-    </div>
-  </main>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sign Up - StateRecharge</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
-      padding: 50px;
+      height: 140px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-    }
-    form {
-      background: white;
-      max-width: 400px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px gray;
-    }
-    input[type="email"], input[type="password"] {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      padding: 10px 20px;
-      background: #28a745;
-      color: white;
-      border: none;
-      border-radius: 5px;
+      transition: transform 0.2s;
       cursor: pointer;
     }
-    a {
-      display: block;
-      margin-top: 15px;
-      text-decoration: none;
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+    }
+    .card-icon {
+      font-size: 36px;
+      margin-bottom: 10px;
       color: #0072ff;
     }
-    #error-msg {
-      color: red;
-      margin-top: 10px;
+    .card-title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      color: #777;
+      background: #eaeaea;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h2>Create Your Account</h2>
-  <form id="signupForm">
-    <input type="email" id="email" placeholder="Email" required /><br />
-    <input type="password" id="password" placeholder="Password" required /><br />
-    <button type="submit">Sign Up</button>
-    <div id="error-msg"></div>
-    <a href="login.html">Already have an account? Login</a>
-  </form>
+  <header>
+    <h1>Welcome to StateRecharge Dashboard</h1>
+  </header>
 
-  <!-- Firebase SDK -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+  <div class="container">
+    <div class="card">
+      <div class="card-icon">🔋</div>
+      <div class="card-title">Recharge</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">💡</div>
+      <div class="card-title">Bill Payment</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">💸</div>
+      <div class="card-title">Money Transfer</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏦</div>
+      <div class="card-title">Account Opening</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚗</div>
+      <div class="card-title">FASTag</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🛡️</div>
+      <div class="card-title">Insurance</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📲</div>
+      <div class="card-title">AEPS Service</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧾</div>
+      <div class="card-title">Pan Card</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">💰</div>
+      <div class="card-title">Loan Assistance</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📉</div>
+      <div class="card-title">Credit Score</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏧</div>
+      <div class="card-title">Mini ATM</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">📜</div>
+      <div class="card-title">Wallet History</div>
+    </div>
+  </div>
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyCgAagNIOl7mtUhi0ogG_OL2Jp1orqSIGQ",
-      authDomain: "rechargenetwork-d890a.firebaseapp.com",
-      projectId: "rechargenetwork-d890a",
-      storageBucket: "rechargenetwork-d890a.appspot.com",
-      messagingSenderId: "740892248731",
-      appId: "1:740892248731:web:6561546e5eee166ffb143e",
-      measurementId: "G-ZG78MTKWK8"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    const signupForm = document.getElementById("signupForm");
-    const errorMsg = document.getElementById("error-msg");
-
-    signupForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signup success
-          window.location.href = "login.html"; // Redirect to login
-        })
-        .catch((error) => {
-          // Show error message
-          errorMsg.textContent = "Signup failed: " + error.message;
-        });
-    });
-  </script>
+  <footer>
+    &copy; 2025 StateRecharge.com - All Rights Reserved
+  </footer>
 </body>
 </html>
