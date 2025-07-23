@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login - StateRecharge</title>
   <style>
     body {
@@ -19,7 +19,7 @@
       border-radius: 10px;
       box-shadow: 0 0 10px gray;
     }
-    input[type="text"], input[type="password"] {
+    input[type="email"], input[type="password"] {
       width: 90%;
       padding: 10px;
       margin: 10px 0;
@@ -40,38 +40,58 @@
       text-decoration: none;
       color: #0072ff;
     }
+    #error-msg {
+      color: red;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
   <h2>Login to StateRecharge</h2>
-  <form>
-    <input type="text" placeholder="Username" required><br>
-    <input type="password" placeholder="Password" required><br>
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Email" required /><br />
+    <input type="password" id="password" placeholder="Password" required /><br />
     <button type="submit">Login</button>
+    <div id="error-msg"></div>
     <a href="signup.html">Don't have an account? Sign Up</a>
   </form>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCgAagNIOl7mtUhi0ogG_OL2Jp1orqSIGQ",
+      authDomain: "rechargenetwork-d890a.firebaseapp.com",
+      projectId: "rechargenetwork-d890a",
+      storageBucket: "rechargenetwork-d890a.appspot.com",
+      messagingSenderId: "740892248731",
+      appId: "1:740892248731:web:6561546e5eee166ffb143e",
+      measurementId: "G-ZG78MTKWK8"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const loginForm = document.getElementById("loginForm");
+    const errorMsg = document.getElementById("error-msg");
+
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Login success
+          window.location.href = "dashboard.html"; // Redirect
+        })
+        .catch((error) => {
+          // Show error message
+          errorMsg.textContent = "Login failed: " + error.message;
+        });
+    });
+  </script>
 </body>
 </html>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCgAagNIOl7mtUhi0ogG_OL2Jp1orqSIGQ",
-    authDomain: "rechargenetwork-d890a.firebaseapp.com",
-    projectId: "rechargenetwork-d890a",
-    storageBucket: "rechargenetwork-d890a.firebasestorage.app",
-    messagingSenderId: "740892248731",
-    appId: "1:740892248731:web:6561546e5eee166ffb143e",
-    measurementId: "G-ZG78MTKWK8"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
