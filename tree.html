@@ -1,71 +1,143 @@
-<!DOCTYPE html>
+""<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Referral Tree</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Network Marketing Tree - 5 Level</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f7f9fc;
+      margin: 0;
       padding: 20px;
     }
-    ul {
+    h1 {
+      text-align: center;
+      color: #2e3b4e;
+    }
+    .tree ul {
+      padding-top: 20px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .tree li {
       list-style-type: none;
-      padding-left: 20px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      padding: 20px 5px 0 5px;
+      transition: all 0.5s;
     }
-    li {
-      margin-bottom: 5px;
+    .tree li::before, .tree li::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      border-top: 2px solid #ccc;
+      width: 50%;
+      height: 20px;
     }
-    .node {
-      cursor: pointer;
-      font-weight: bold;
-      color: #2c3e50;
+    .tree li::before {
+      left: -50%;
+      border-right: 2px solid #ccc;
     }
-    .hidden {
+    .tree li::after {
+      right: -50%;
+      border-left: 2px solid #ccc;
+    }
+    .tree li:only-child::before, .tree li:only-child::after {
       display: none;
+    }
+    .tree li:only-child {
+      padding-top: 0;
+    }
+    .tree li:first-child::before, .tree li:last-child::after {
+      border: none;
+    }
+    .tree .node {
+      display: inline-block;
+      border: 2px solid #4a90e2;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: #fff;
+      position: relative;
+      color: #333;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .level {
+      font-size: 12px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <h2>Referral Network Tree</h2>
-  <div id="tree"></div>
-
-  <script>
-    const users = [
-      { name: "Masoom01", ref: null },
-      { name: "UserA", ref: "Masoom01" },
-      { name: "UserB", ref: "Masoom01" },
-      { name: "UserA1", ref: "UserA" },
-      { name: "UserA2", ref: "UserA" },
-      { name: "UserB1", ref: "UserB" },
-      { name: "UserA1a", ref: "UserA1" },
-      { name: "UserB1a", ref: "UserB1" },
-      { name: "UserB1b", ref: "UserB1" }
-    ];
-
-    function buildTree(users, parent) {
-      const tree = document.createElement("ul");
-      users.filter(u => u.ref === parent).forEach(user => {
-        const li = document.createElement("li");
-        const span = document.createElement("span");
-        span.textContent = user.name;
-        span.className = "node";
-        span.onclick = () => {
-          const subTree = li.querySelector("ul");
-          if (subTree) subTree.classList.toggle("hidden");
-        };
-        li.appendChild(span);
-        const childTree = buildTree(users, user.name);
-        if (childTree.children.length > 0) {
-          li.appendChild(childTree);
-          childTree.classList.add("hidden");
-        }
-        tree.appendChild(li);
-      });
-      return tree;
-    }
-
-    document.getElementById("tree").appendChild(buildTree(users, null));
-  </script>
+  <h1>5 Level Network Marketing Tree</h1>
+  <div class="tree">
+    <ul>
+      <li>
+        <div class="node">Masoom Ali<br><span class="level">Level 1</span></div>
+        <ul>
+          <li>
+            <div class="node">User A<br><span class="level">Level 2</span></div>
+            <ul>
+              <li>
+                <div class="node">User A1<br><span class="level">Level 3</span></div>
+                <ul>
+                  <li>
+                    <div class="node">User A1a<br><span class="level">Level 4</span></div>
+                    <ul>
+                      <li>
+                        <div class="node">User A1a1<br><span class="level">Level 5</span></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="node">User B<br><span class="level">Level 2</span></div>
+            <ul>
+              <li>
+                <div class="node">User B1<br><span class="level">Level 3</span></div>
+                <ul>
+                  <li>
+                    <div class="node">User B1a<br><span class="level">Level 4</span></div>
+                    <ul>
+                      <li>
+                        <div class="node">User B1a1<br><span class="level">Level 5</span></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="node">User C<br><span class="level">Level 2</span></div>
+            <ul>
+              <li>
+                <div class="node">User C1<br><span class="level">Level 3</span></div>
+                <ul>
+                  <li>
+                    <div class="node">User C1a<br><span class="level">Level 4</span></div>
+                    <ul>
+                      <li>
+                        <div class="node">User C1a1<br><span class="level">Level 5</span></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </body>
-</html>
+</html>""
