@@ -1,0 +1,171 @@
+[3:10 am, 23/7/2025] Lpg: <!DOCTYPE html>
+<html>
+<head>
+  <title>Wallet - StateRecharge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: sans-serif; background: #fff3e0; padding: 30px; text-align: center; }
+    .wallet-box {
+      background: #fff; padding: 30px; border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); display: inline-block;
+    }
+    h2 { color: #ef6c00; }
+    h1 { font-size: 40px; margin: 20px 0; color: #333; }
+  </style>
+</head>
+<body>
+  <div class="wallet-box">
+    <h2>Your Wallet Balance</h2>
+    <h1>₹1,250.00</h1>
+    <p>(This is a demo balance)</p>
+  </div>
+</body>
+</html>
+[3:14 am, 23/7/2025] Lpg: <!DOCTYPE html>
+<html>
+<head>
+  <title>Logged Out - StateRecharge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: sans-serif; background: #eceff1; text-align: center; padding: 100px; }
+    h2 { color: #c62828; }
+    a { color: #1976d2; text-decoration: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>You have been logged out.</h2>
+  <p><a href="login.html">Login Again</a></p>
+</body>
+</html>
+[3:23 am, 23/7/2025] Lpg: <!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic 5 Tree System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; padding: 20px; text-align: center; }
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 220px;
+    }
+    button {
+      background-color: #2e7d32;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    .tree ul {
+      padding-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .tree li {
+      list-style-type: none;
+      margin: 0 20px;
+      text-align: center;
+      position: relative;
+      padding: 20px 5px 0 5px;
+    }
+    .tree li::before, .tree li::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 50%;
+      border-top: 2px solid #2e7d32;
+      width: 50%;
+      height: 20px;
+    }
+    .tree li::after {
+      right: auto;
+      left: 50%;
+      border-left: 2px solid #2e7d32;
+    }
+    .tree li:only-child::before,
+    .tree li:only-child::after {
+      display: none;
+    }
+    .tree li > div {
+      display: inline-block;
+      border: 2px solid #2e7d32;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: #fff;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    .ref {
+      display: block;
+      font-size: 12px;
+      color: #555;
+      margin-top: 4px;
+    }
+    .tree-container {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Dynamic 5 Tree System with Referral</h2>
+
+  <input type="text" id="userName" placeholder="Your Name"><br>
+  <input type="text" id="userRef" placeholder="Your Referral Code"><br>
+
+  <hr style="width: 300px; margin: 20px auto;">
+
+  <h4>Enter 5 Member Names & Referrals</h4>
+  <div id="memberInputs">
+    <input type="text" id="m1" placeholder="Member 1 Name">
+    <input type="text" id="r1" placeholder="Referral 1"><br>
+    <input type="text" id="m2" placeholder="Member 2 Name">
+    <input type="text" id="r2" placeholder="Referral 2"><br>
+    <input type="text" id="m3" placeholder="Member 3 Name">
+    <input type="text" id="r3" placeholder="Referral 3"><br>
+    <input type="text" id="m4" placeholder="Member 4 Name">
+    <input type="text" id="r4" placeholder="Referral 4"><br>
+    <input type="text" id="m5" placeholder="Member 5 Name">
+    <input type="text" id="r5" placeholder="Referral 5"><br>
+  </div>
+
+  <button onclick="generateTree()">Generate Tree</button>
+
+  <div class="tree-container">
+    <div class="tree" id="treeArea"></div>
+  </div>
+
+  <script>
+    function generateTree() {
+      const name = document.getElementById('userName').value || "You";
+      const ref = document.getElementById('userRef').value || "YOU123";
+
+      let members = [];
+      for (let i = 1; i <= 5; i++) {
+        const memName = document.getElementById(m${i}).value || Member ${i};
+        const memRef = document.getElementById(r${i}).value || REF${i};
+        members.push({ name: memName, ref: memRef });
+      }
+
+      let treeHTML = `
+        <ul>
+          <li>
+            <div>${name}<span class="ref">[Ref: ${ref}]</span></div>
+            <ul>
+              ${members.map(m => `
+                <li>
+                  <div>${m.name}<span class="ref">[Ref: ${m.ref}]</span></div>
+                </li>
+              `).join('')}
+            </ul>
+          </li>
+        </ul>
+      `;
+
+      document.getElementById('treeArea').innerHTML = treeHTML;
+    }
+  </script>
+
+</body>
+</html>
