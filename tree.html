@@ -1,4 +1,4 @@
-[4:50 am, 23/7/2025] Lpg: ""<!DOCTYPE html>
+""<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -32,32 +32,6 @@
       padding: 20px 5px 0 5px;
       transition: all 0.5s;
     }
-    .tree li::before, .tree …
-[5:05 am, 23/7/2025] Lpg: <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Dynamic 5-Level Tree</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      padding: 20px;
-    }
-    .tree ul {
-      padding-top: 20px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-    .tree li {
-      list-style: none;
-      text-align: center;
-      position: relative;
-      padding: 20px 5px 0 5px;
-    }
     .tree li::before, .tree li::after {
       content: '';
       position: absolute;
@@ -80,107 +54,90 @@
     .tree li:only-child {
       padding-top: 0;
     }
+    .tree li:first-child::before, .tree li:last-child::after {
+      border: none;
+    }
     .tree .node {
       display: inline-block;
       border: 2px solid #4a90e2;
       padding: 10px 15px;
       border-radius: 8px;
       background: #fff;
+      position: relative;
       color: #333;
       font-weight: bold;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     .level {
       font-size: 12px;
-      color: #999;
+      color: #888;
     }
   </style>
 </head>
 <body>
-
-<h2 style="text-align:center;">Dynamic Network Marketing Tree (5 Level)</h2>
-
-<div class="tree" id="treeContainer"></div>
-
-<script>
-  const data = {
-    "name": "Masoom Ali",
-    "level": 1,
-    "children": [
-      {
-        "name": "User A",
-        "level": 2,
-        "children": [
-          {
-            "name": "User A1",
-            "level": 3,
-            "children": [
-              {
-                "name": "User A1a",
-                "level": 4,
-                "children": [
-                  {
-                    "name": "User A1a1",
-                    "level": 5,
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "User B",
-        "level": 2,
-        "children": [
-          {
-            "name": "User B1",
-            "level": 3,
-            "children": [
-              {
-                "name": "User B1a",
-                "level": 4,
-                "children": [
-                  {
-                    "name": "User B1a1",
-                    "level": 5,
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  };
-
-  function createTreeNode(node) {
-    const li = document.createElement('li');
-    const div = document.createElement('div');
-    div.className = 'node';
-    div.innerHTML = ${node.name}<br><span class="level">Level ${node.level}</span>;
-    li.appendChild(div);
-
-    if (node.children && node.children.length > 0) {
-      const ul = document.createElement('ul');
-      node.children.forEach(child => {
-        ul.appendChild(createTreeNode(child));
-      });
-      li.appendChild(ul);
-    }
-
-    return li;
-  }
-
-  function renderTree() {
-    const rootUl = document.createElement('ul');
-    rootUl.appendChild(createTreeNode(data));
-    document.getElementById('treeContainer').appendChild(rootUl);
-  }
-
-  renderTree();
-</script>
-
+  <h1>5 Level Network Marketing Tree</h1>
+  <div class="tree">
+    <ul>
+      <li>
+        <div class="node">Masoom Ali<br><span class="level">Level 1</span></div>
+        <ul>
+          <li>
+            <div class="node">User A<br><span class="level">Level 2</span></div>
+            <ul>
+              <li>
+                <div class="node">User A1<br><span class="level">Level 3</span></div>
+                <ul>
+                  <li>
+                    <div class="node">User A1a<br><span class="level">Level 4</span></div>
+                    <ul>
+                      <li>
+                        <div class="node">User A1a1<br><span class="level">Level 5</span></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="node">User B<br><span class="level">Level 2</span></div>
+            <ul>
+              <li>
+                <div class="node">User B1<br><span class="level">Level 3</span></div>
+                <ul>
+                  <li>
+                    <div class="node">User B1a<br><span class="level">Level 4</span></div>
+                    <ul>
+                      <li>
+                        <div class="node">User B1a1<br><span class="level">Level 5</span></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="node">User C<br><span class="level">Level 2</span></div>
+            <ul>
+              <li>
+                <div class="node">User C1<br><span class="level">Level 3</span></div>
+                <ul>
+                  <li>
+                    <div class="node">User C1a<br><span class="level">Level 4</span></div>
+                    <ul>
+                      <li>
+                        <div class="node">User C1a1<br><span class="level">Level 5</span></div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </body>
-</html>
+</html>""
