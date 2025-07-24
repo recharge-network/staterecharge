@@ -1,28 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>StateRecharge - Home</title>
-  <style>
-    body { font-family: Arial; padding: 20px; background: #f5f5f5; }
-    h1 { color: #2c3e50; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 10px 0; }
-    a { text-decoration: none; background: #3498db; color: white; padding: 10px 15px; border-radius: 5px; }
-  </style>
+  <title>Login | StateRecharge</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <h1>Welcome to StateRecharge</h1>
-  <p>Select an option below:</p>
-  <ul>
-    <li><a href="login.html">🔐 Login</a></li>
-    <li><a href="signup.html">📝 Sign Up</a></li>
-    <li><a href="wallet.html">💰 Wallet</a></li>
-    <li><a href="recharge.html">📱 Recharge</a></li>
-    <li><a href="billpayment.html">💡 Bill Payment</a></li>
-    <li><a href="dashboard.html">📊 Dashboard</a></li>
-    <li><a href="tree.html">🌳 My Network</a></li>
-    <li><a href="logout.html">🚪 Logout</a></li>
-  </ul>
+  <h2>🔐 Login</h2>
+  <form id="loginForm">
+    <input type="text" name="username" placeholder="Username" required><br>
+    <input type="password" name="password" placeholder="Password" required><br>
+    <button type="submit">Login</button>
+  </form>
+  <p>📝 Don’t have an account? <a href="signup.html">Sign Up</a></p>
+
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
