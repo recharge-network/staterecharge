@@ -1,126 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard - StateRecharge</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #0072ff;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    h1 {
-      margin: 0;
-    }
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 20px;
-      gap: 20px;
-    }
-    .card {
-      background-color: white;
-      width: 200px;
-      height: 140px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      transition: transform 0.2s;
-      cursor: pointer;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 12px rgba(0,0,0,0.2);
-    }
-    .card-icon {
-      font-size: 36px;
-      margin-bottom: 10px;
-      color: #0072ff;
-    }
-    .card-title {
-      font-size: 16px;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      color: #777;
-      background: #eaeaea;
-      margin-top: 20px;
-    }
-  </style>
+  <title>Dashboard | StateRecharge</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to StateRecharge Dashboard</h1>
-  </header>
+  <h2>📊 Welcome to StateRecharge Dashboard</h2>
+  <a href="index.html">🚪 Logout</a>
 
-  <div class="container">
-    <div class="card">
-      <div class="card-icon">🔋</div>
-      <div class="card-title">Recharge</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">💡</div>
-      <div class="card-title">Bill Payment</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">💸</div>
-      <div class="card-title">Money Transfer</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">🏦</div>
-      <div class="card-title">Account Opening</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">🚗</div>
-      <div class="card-title">FASTag</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">🛡️</div>
-      <div class="card-title">Insurance</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">📲</div>
-      <div class="card-title">AEPS Service</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">🧾</div>
-      <div class="card-title">Pan Card</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">💰</div>
-      <div class="card-title">Loan Assistance</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">📉</div>
-      <div class="card-title">Credit Score</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">🏧</div>
-      <div class="card-title">Mini ATM</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">📜</div>
-      <div class="card-title">Wallet History</div>
-    </div>
+  <div class="service-grid">
+    <div class="service-card">📱 Mobile Recharge</div>
+    <div class="service-card">💡 Bill Payment</div>
+    <div class="service-card">📝 PAN Card</div>
+    <div class="service-card">💸 Money Transfer</div>
+    <div class="service-card">📺 DTH Recharge</div>
+    <div class="service-card">🛍️ Amazon Services</div>
+    <div class="service-card">💳 Credit Card</div>
+    <div class="service-card">🏦 Account Opening</div>
+    <div class="service-card">🚗 Insurance</div>
+    <div class="service-card">🛒 Fastag</div>
   </div>
-
-  <footer>
-    &copy; 2025 StateRecharge.com - All Rights Reserved
-  </footer>
 </body>
 </html>
